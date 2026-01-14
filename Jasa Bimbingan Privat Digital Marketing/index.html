@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Bimbingan Privat Digital Marketing - Belajar dari Nol Sampai Bisa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g5' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' stop-color='%23FF6B35'/><stop offset='100%' stop-color='%232A5CFF'/></linearGradient></defs><rect x='30' y='25' width='40' height='50' rx='5' fill='url(%23g5)' stroke='white' stroke-width='2'/><rect x='35' y='30' width='30' height='10' fill='white' opacity='0.8'/><rect x='35' y='45' width='30' height='10' fill='white' opacity='0.8'/><rect x='35' y='60' width='30' height='10' fill='white' opacity='0.8'/><path d='M50,80 L70,65 L70,90 Z' fill='%232A5CFF'/><path d='M50,80 L30,65 L30,90 Z' fill='%23FF6B35'/></svg>">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2A5CFF;
+            --secondary: #FF6B35;
+            --dark: #1A1A2E;
+            --light: #F8F9FA;
+            --gray: #6C757D;
+            --success: #28A745;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--dark) 0%, #2A2A4E 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: -2px;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .cta-button {
+            background: linear-gradient(to right, var(--secondary), #FF8B35);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+        }
+        
+        .cta-button i {
+            margin-right: 8px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero h1 .highlight {
+            color: var(--secondary);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+        
+        .hero .cta-button {
+            font-size: 1.2rem;
+            padding: 16px 40px;
+            margin-top: 20px;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Untuk Siapa Section */
+        .target-audience {
+            background-color: white;
+        }
+        
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .audience-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .audience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        }
+        
+        .audience-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .audience-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Fasilitas Section */
+        .facilities {
+            background-color: #f0f5ff;
+        }
+        
+        .facility-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .facility-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .facility-item i {
+            color: var(--success);
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        /* Materi Section */
+        .materials {
+            background-color: white;
+        }
+        
+        .material-accordion {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .accordion-header {
+            background: linear-gradient(to right, var(--primary), #4A7BFF);
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion-header:hover {
+            background: linear-gradient(to right, #1A4CFF, #3A6BFF);
+        }
+        
+        .accordion-header i {
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-content {
+            background-color: #f8fafc;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            padding: 25px;
+            max-height: 1000px;
+        }
+        
+        .accordion-content ul {
+            list-style-type: none;
+        }
+        
+        .accordion-content li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e2e8f0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .accordion-content li:last-child {
+            border-bottom: none;
+        }
+        
+        .accordion-content li i {
+            color: var(--success);
+            margin-right: 10px;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+        
+        .sub-topic {
+            margin-left: 20px;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Sistem Belajar Section */
+        .learning-system {
+            background-color: #f0f5ff;
+        }
+        
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .system-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+        }
+        
+        .system-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .system-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark) 0%, #2A2A4E 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #ddd;
+        }
+        
+        .cta-section .cta-button {
+            font-size: 1.3rem;
+            padding: 18px 45px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1A1A2E;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .whatsapp-contact {
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin: 20px 0 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-contact:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-contact i {
+            margin-right: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            width: 100%;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            .audience-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .system-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 70px 0;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .system-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .accordion-header {
+                padding: 15px;
+                font-size: 1rem;
+            }
+            
+            .accordion-content.active {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    Digital<span>Privat</span>
+                </div>
+                <a href="https://wa.me/628979046162?text=Halo,%20saya%20tertarik%20dengan%20bimbingan%20privat%20digital%20marketing" class="cta-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Daftar Sekarang
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>🔥 JASA BIMBINGAN PRIVAT <span class="highlight">DIGITAL MARKETING</span></h1>
+            <p class="hero-subtitle">Belajar dari Nol Sampai Bisa Jualan & Closing Konsisten</p>
+            <a href="https://wa.me/628979046162?text=Halo,%20saya%20tertarik%20dengan%20bimbingan%20privat%20digital%20marketing" class="cta-button" target="_blank">
+                <i class="fab fa-whatsapp"></i> PENDAFTARAN WA : 0897 9046 162
+            </a>
+        </div>
+    </section>
+
+    <!-- Untuk Siapa Section -->
+    <section class="target-audience">
+        <div class="container">
+            <div class="section-title">
+                <h2>🎯 BISA UNTUK SIAPA SAJA</h2>
+            </div>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Pemula</h3>
+                    <p>UMKM, pemilik toko, reseller, dropshipper yang baru memulai bisnis online.</p>
+                </div>
+                <div class="audience-card">
+                    <i class="fas fa-store"></i>
+                    <h3>Owner Toko</h3>
+                    <p>Owner toko offline & online yang ingin meningkatkan penjualan melalui digital marketing.</p>
+                </div>
+                <div class="audience-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Admin Sosial Media</h3>
+                    <p>Yang ingin meningkatkan skill dalam mengelola akun bisnis dan iklan.</p>
+                </div>
+                <div class="audience-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Freelancer Pemula</h3>
+                    <p>Ingin menawarkan jasa digital marketing dengan skill yang terpercaya.</p>
+                </div>
+                <div class="audience-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Mahasiswa / Fresh Graduate</h3>
+                    <p>Ingin memiliki skill digital marketing yang dibutuhkan industri saat ini.</p>
+                </div>
+                <div class="audience-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Pebisnis Naik Omzet</h3>
+                    <p>Pebisnis yang ingin naik omzet dengan strategi digital marketing yang tepat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fasilitas Section -->
+    <section class="facilities">
+        <div class="container">
+            <div class="section-title">
+                <h2>💡 FASILITAS TERBAIK</h2>
+            </div>
+            <div class="facility-list">
+                <div class="facility-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Privat 1-on-1</h3>
+                        <p>Spesial Untuk Privat 1 Orang 1 Pembimbing. Perhatian penuh untuk kemajuan Anda.</p>
+                    </div>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Praktik Langsung</h3>
+                        <p>Praktik langsung di akun bisnis peserta. Belajar teori sekaligus aplikasi.</p>
+                    </div>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Materi Update & Real Case</h3>
+                        <p>Materi selalu diperbarui dengan studi kasus nyata dari bisnis terkini.</p>
+                    </div>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Bisa Tanya Kapan Saja</h3>
+                        <p>Support tanya jawab di luar jam belajar untuk memastikan Anda paham.</p>
+                    </div>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Cocok untuk Pemula 100%</h3>
+                        <p>Materi disusun dari dasar hingga mahir, cocok untuk yang baru mulai.</p>
+                    </div>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Fokus Hasil: Traffic – Leads – Closing</h3>
+                        <p>Pembelajaran berfokus pada pencapaian hasil nyata dalam bisnis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materi Section -->
+    <section class="materials">
+        <div class="container">
+            <div class="section-title">
+                <h2>📦 PAKET LENGKAP MATERI YANG DIPELAJARI</h2>
+            </div>
+            <div class="material-accordion">
+                <!-- Accordion items will be dynamically generated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistem Belajar Section -->
+    <section class="learning-system">
+        <div class="container">
+            <div class="section-title">
+                <h2>🎓 SISTEM BELAJAR</h2>
+            </div>
+            <div class="system-grid">
+                <div class="system-card">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Privat 1-on-1</h3>
+                    <p>Belajar langsung dengan mentor secara privat</p>
+                </div>
+                <div class="system-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Online (Zoom/Google Meet)</h3>
+                    <p>Kelas fleksibel bisa dari mana saja</p>
+                </div>
+                <div class="system-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Praktik Langsung</h3>
+                    <p>Praktik langsung di akun bisnis Anda</p>
+                </div>
+                <div class="system-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Studi Kasus Real</h3>
+                    <p>Belajar dari kasus bisnis nyata</p>
+                </div>
+                <div class="system-card">
+                    <i class="fas fa-record-vinyl"></i>
+                    <h3>Rekaman Kelas</h3>
+                    <p>Akses rekaman untuk belajar ulang</p>
+                </div>
+                <div class="system-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Modul & Checklist</h3>
+                    <p>Materi terstruktur dan checklist progress</p>
+                </div>
+                <div class="system-card">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>Support Tanya Jawab</h3>
+                    <p>Bisa konsultasi kapan saja</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Siap Menguasai Digital Marketing?</h2>
+            <p>Jangan lewatkan kesempatan untuk belajar langsung dari mentor berpengalaman dengan sistem privat 1-on-1. Mulai bangun bisnis online Anda sekarang juga!</p>
+            <a href="https://wa.me/628979046162?text=Halo,%20saya%20tertarik%20dengan%20bimbingan%20privat%20digital%20marketing" class="cta-button" target="_blank">
+                <i class="fab fa-whatsapp"></i> DAFTAR SEKARANG - 0897 9046 162
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-chart-line"></i>
+                    Digital<span>Privat</span>
+                </div>
+                <p>Jasa Bimbingan Privat Digital Marketing Terpercaya</p>
+                <a href="https://wa.me/628979046162?text=Halo,%20saya%20tertarik%20dengan%20bimbingan%20privat%20digital%20marketing" class="whatsapp-contact" target="_blank">
+                    <i class="fab fa-whatsapp"></i> 0897 9046 162
+                </a>
+                <p>Belajar dari Nol Sampai Bisa Jualan & Closing Konsisten</p>
+                <div class="copyright">
+                    &copy; 2026 Jasa Bimbingan Privat Digital Marketing. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data materi pembelajaran
+        const materials = [
+            {
+                title: "1️⃣ DASAR DIGITAL MARKETING (FOUNDATION)",
+                content: [
+                    "✔ Mindset Digital Marketing",
+                    "✔ Perbedaan organik vs ads",
+                    "✔ Customer journey (Awareness – Interest – Decision – Action)",
+                    "✔ Funnel penjualan",
+                    "✔ Branding vs selling",
+                    "✔ Analisa target market & buyer persona"
+                ]
+            },
+            {
+                title: "2️⃣ FACEBOOK & INSTAGRAM MARKETING (META)",
+                content: [
+                    "🔹 Organik",
+                    "• Optimasi akun IG & FB bisnis",
+                    "• Bio & profile yang menjual",
+                    "• Konten edukasi, promosi & soft selling",
+                    "• Caption teknik AIDA & PAS",
+                    "• Hashtag & jam posting",
+                    "• Story selling & interaksi",
+                    "🔹 Facebook & Instagram Ads",
+                    "• Setup Business Manager",
+                    "• Setup Pixel & Event",
+                    "• Struktur campaign (Awareness, Traffic, Conversion)",
+                    "• Penentuan objective iklan",
+                    "• Targeting detail (interest, behavior, custom audience)",
+                    "• Retargeting & Lookalike",
+                    "• Budgeting & scaling iklan",
+                    "• Analisa performa ads",
+                    "• Cara matikan iklan rugi"
+                ]
+            },
+            {
+                title: "3️⃣ TIKTOK MARKETING",
+                content: [
+                    "🔹 TikTok Organik",
+                    "• Algoritma TikTok",
+                    "• Ide konten FYP",
+                    "• Hook 3 detik pertama",
+                    "• Script video viral",
+                    "• Editing dasar TikTok",
+                    "• CTA yang efektif",
+                    "• Live TikTok selling",
+                    "🔹 TikTok Ads",
+                    "• Setup TikTok Ads Manager",
+                    "• Pixel TikTok",
+                    "• Campaign conversion",
+                    "• Interest & custom audience",
+                    "• Testing kreatif",
+                    "• Scaling iklan"
+                ]
+            },
+            {
+                title: "4️⃣ YOUTUBE MARKETING",
+                content: [
+                    "🔹 YouTube Organik",
+                    "• Riset keyword video",
+                    "• Judul SEO YouTube",
+                    "• Deskripsi & tag",
+                    "• Thumbnail menarik",
+                    "• Script video edukasi & selling",
+                    "• Monetisasi channel",
+                    "🔹 YouTube Ads",
+                    "• Jenis iklan YouTube (In-Stream, Discovery)",
+                    "• Targeting audience",
+                    "• Budget & bidding",
+                    "• Analisa performa iklan"
+                ]
+            },
+            {
+                title: "5️⃣ WEBSITE & LANDING PAGE",
+                content: [
+                    "• Struktur website bisnis",
+                    "• Landing page yang converting",
+                    "• Copywriting headline",
+                    "• CTA & penawaran",
+                    "• Integrasi WA & form",
+                    "• Tracking Google Analytics",
+                    "• Dasar SEO website"
+                ]
+            },
+            {
+                title: "6️⃣ GOOGLE MARKETING",
+                content: [
+                    "🔹 Google Ads",
+                    "• Google Search Ads",
+                    "• Riset keyword",
+                    "• Struktur campaign",
+                    "• Copywriting iklan Google",
+                    "• Budget & bidding",
+                    "• Quality Score",
+                    "• Optimasi iklan",
+                    "🔹 Google Maps (Local SEO)",
+                    "• Setup Google Bisnisku",
+                    "• Optimasi profil",
+                    "• Review & rating",
+                    "• Foto & posting",
+                    "• Ranking Google Maps"
+                ]
+            },
+            {
+                title: "7️⃣ SHOPEE MARKETING",
+                content: [
+                    "• Setup toko profesional",
+                    "• Optimasi produk",
+                    "• Judul & deskripsi SEO Shopee",
+                    "• Foto & video produk",
+                    "• Shopee Ads",
+                    "• Flash Sale & voucher",
+                    "• Analisa performa toko"
+                ]
+            },
+            {
+                title: "8️⃣ WHATSAPP BISNIS (CLOSING SYSTEM)",
+                content: [
+                    "• Setup WA Business",
+                    "• Katalog produk",
+                    "• Quick reply",
+                    "• Label pelanggan",
+                    "• Script chat closing",
+                    "• Follow up sistematis",
+                    "• Broadcast WA tanpa spam",
+                    "• Closing psikologi pelanggan"
+                ]
+            },
+            {
+                title: "9️⃣ COPYWRITING & CONTENT SELLING",
+                content: [
+                    "• Teknik copywriting dasar",
+                    "• Headline yang menarik",
+                    "• Storytelling",
+                    "• Soft selling vs hard selling",
+                    "• CTA efektif",
+                    "• Script iklan & konten"
+                ]
+            },
+            {
+                title: "🔟 ANALISA & SCALE UP",
+                content: [
+                    "• Membaca insight & analytics",
+                    "• Evaluasi konten & iklan",
+                    "• Split test",
+                    "• Scale bisnis digital",
+                    "• Automation sederhana"
+                ]
+            }
+        ];
+
+        // Generate accordion items
+        const accordionContainer = document.querySelector('.material-accordion');
+        
+        materials.forEach((material, index) => {
+            const accordionItem = document.createElement('div');
+            accordionItem.className = 'accordion-item';
+            
+            const accordionHeader = document.createElement('div');
+            accordionHeader.className = 'accordion-header';
+            accordionHeader.innerHTML = `
+                ${material.title}
+                <i class="fas fa-chevron-down"></i>
+            `;
+            
+            const accordionContent = document.createElement('div');
+            accordionContent.className = 'accordion-content';
+            
+            const contentList = document.createElement('ul');
+            material.content.forEach(item => {
+                const listItem = document.createElement('li');
+                
+                // Check if item is a subheader (contains emoji)
+                if (item.includes("🔹")) {
+                    listItem.innerHTML = `<strong>${item}</strong>`;
+                } else if (item.startsWith("•")) {
+                    listItem.innerHTML = `<i class="fas fa-check"></i> ${item}`;
+                } else {
+                    listItem.innerHTML = `<i class="fas fa-check"></i> ${item}`;
+                }
+                
+                contentList.appendChild(listItem);
+            });
+            
+            accordionContent.appendChild(contentList);
+            accordionItem.appendChild(accordionHeader);
+            accordionItem.appendChild(accordionContent);
+            accordionContainer.appendChild(accordionItem);
+            
+            // Add click event to toggle accordion
+            accordionHeader.addEventListener('click', () => {
+                const isActive = accordionContent.classList.contains('active');
+                
+                // Close all other accordions
+                document.querySelectorAll('.accordion-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                document.querySelectorAll('.accordion-header i').forEach(icon => {
+                    icon.style.transform = 'rotate(0deg)';
+                });
+                
+                // Toggle current accordion
+                if (!isActive) {
+                    accordionContent.classList.add('active');
+                    accordionHeader.querySelector('i').style.transform = 'rotate(180deg)';
+                }
+            });
+            
+            // Open first accordion by default
+            if (index === 0) {
+                accordionContent.classList.add('active');
+                accordionHeader.querySelector('i').style.transform = 'rotate(180deg)';
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
